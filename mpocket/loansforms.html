@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Loan Application Form</title>
+    <link rel="stylesheet" href="loansforms.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Personal Loan Application</h2>
+        <form id="personalLoanForm">
+            <!-- Personal Information Section -->
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+
+            <!-- Employment Details Section -->
+            <div class="form-section">
+                <h3>Employment Details</h3>
+                <label for="employerName">Employer Name:</label>
+                <input type="text" id="employerName" name="employerName" required>
+
+                <label for="jobTitle">Job Title:</label>
+                <input type="text" id="jobTitle" name="jobTitle" required>
+
+                <label for="annualIncome">Annual Income:</label>
+                <input type="number" id="annualIncome" name="annualIncome" required>
+
+                <label for="employmentLength">Length of Employment (in years):</label>
+                <input type="number" id="employmentLength" name="employmentLength" required>
+            </div>
+
+            <!-- Loan Details Section -->
+            <div class="form-section">
+                <h3>Loan Details</h3>
+                <label for="loanAmount">Desired Loan Amount:</label>
+                <input type="number" id="loanAmount" name="loanAmount" required>
+
+                <label for="loanPurpose">Purpose of Loan:</label>
+                <select id="loanPurpose" name="loanPurpose" required>
+                    <option value="">Select</option>
+                    <option value="debt_consolidation">Debt Consolidation</option>
+                    <option value="home_improvement">Home Improvement</option>
+                    <option value="medical_expenses">Medical Expenses</option>
+                    <option value="education">Education</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Contact Information Section -->
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>

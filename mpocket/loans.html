@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Mobile Number</title>
+    <link rel="stylesheet" href="loans.css">
+</head>
+<body>
+    <div class="login-container" id="loginContainer">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Enter your mobile number" required>
+            <button type="submit">Send OTP</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <!-- OTP Verification Container -->
+    <div class="otp-container" id="otpContainer" style="display:none;">
+        <h1>Verify OTP</h1>
+        <form id="otpForm">
+            <label for="otp">OTP</label>
+            <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+        <div id="otpMessage"></div>
+    </div>
+
+    <script >
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get the mobile number input
+    const mobileNumber = document.getElementById('mobileNumber').value;
+    
+    // Simple validation for mobile number (e.g., length check)
+    if (mobileNumber.length < 10) {
+        document.getElementById('message').textContent = 'Please enter a valid mobile number.';
+        document.getElementById('message').style.color = 'red';
+        return;
+    }
+
+    // Simulate sending OTP and show OTP form
+    document.getElementById('loginContainer').style.display = 'none';
+    document.getElementById('otpContainer').style.display = 'block';
+    
+    // For demonstration, we'll assume OTP is '123456'
+    // In real implementation, you would send OTP to the mobile number here.
+    localStorage.setItem('otp', '123456');
+    localStorage.setItem('mobileNumber', mobileNumber);
+});
+
+document.getElementById('otpForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get the OTP input
+    const otp = document.getElementById('otp').value;
+    const storedOtp = localStorage.getItem('otp');
+    
+    if (otp === storedOtp) {
+        document.getElementById('otpMessage').textContent = 'OTP verified successfully!';
+        document.getElementById('otpMessage').style.color = 'green';
+        
+        // Proceed to the next step (e.g., redirect to a dashboard)
+        setTimeout(() => {
+            window.location.href = 'dashboard.html'; // Redirect to a dashboard or home page
+        }, 2000);
+    } else {
+        document.getElementById('otpMessage').textContent = 'Invalid OTP. Please try again.';
+        document.getElementById('otpMessage').style.color = 'red';
+    }
+});
+
+    </script>
+</body>
+</html>

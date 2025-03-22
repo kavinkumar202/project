@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIBIL Score Checker</title>
+    <link rel="stylesheet" href="image.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CIBIL Score Checker</h1>
+        <form id="scoreForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="pan">PAN Number:</label>
+            <input type="text" id="pan" name="pan" required>
+
+            <button type="submit">Check CIBIL Score</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>Your CIBIL Score:</h2>
+            <p id="score"></p>
+        </div>
+    </div>
+    <script >
+        document.getElementById('scoreForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Retrieve user input
+    const name = document.getElementById('name').value;
+    const dob = document.getElementById('dob').value;
+    const pan = document.getElementById('pan').value;
+
+    // Simulate a score fetching process (replace this with actual API call)
+    const simulatedScore = Math.floor(1 * 550) + 250; // CIBIL score range is typically 300-900
+
+    // Display the result
+    document.getElementById('score').textContent = `Your simulated CIBIL score is ${simulatedScore}`;
+    document.getElementById('result').classList.remove('hidden');
+
+});
+
+    </script>
+</body>
+</html>
