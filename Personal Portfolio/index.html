@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVINKUMAR</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Port.</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#Skills">Skills&Project</a>
+            <a href="#education"></a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+        <i class='bx bx-menu' id="menu"></i>
+    </header>
+    <section class="home" id="home">
+
+        <div class="text-content">
+            <h2>KAVINKUMAR A</h2>
+            <h5>Web Developer</h5>
+          
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                
+            </div>
+            <button class="btn" > Download C.V</button>
+        </div>
+        <div class="cover">
+            <div class="image"></div>
+            <div class="layout"></div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="image-cover">
+
+            <div class="img">
+                <h2>KAVINKUMAR A</h2>
+                <h5>Web Developer</h5>
+                <img src="kavin.JPG" alt="">
+            </div>
+        </div>
+        <div class="about-text">
+            <h3 class="title"><i class='bx bx-user'></i>ABOUT ME</h3>
+            <p>As a dedicated Full Stack Developer, I have a strong foundation in both frontend and backend technologies. I have successfully completed a comprehensive web development course on Udemy and have hands-on experience from working on a six-month e-commerce project. Currently, I am further enhancing my skills through an ongoing full stack development course at a reputed institute</p>
+            <button class="btn">Read More</button>
+            
+        </div>
+    </section>
+    <section class="Skills" id="Skills">
+        <h3 class="title"><i class='bx bx-user'></i>SKILLS AND PROJECT</h3>
+        <div class="skill-container">
+            <div class="skills-content">
+               
+                <h5>FrontEnd</h5>
+                <p>Html</p>
+                <p>Css</p>
+                <p>Bootstrap</p>
+                <p>Javascrpit</p>
+            </div>
+            <div class="skills-content">
+                
+                <h5>BackEnd</h5>
+                <p>Java</p>
+                <p>SpringBoot</p>
+                <p>RESTApis</p>
+               
+            </div>
+            <div class="skills-content">
+                <i class='bx bxl-'></i>
+                <h5>DataBase</h5>
+                <p>MySql</p>
+
+                
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="card">
+          <div class="icon"></div>
+          <h3 style="font-size: medium;">Real time weather detection</h3>
+          <p  style="font-size: medium;">Real-time Weather Detection application using Spring Boot and a REST API by providing latitude and longitude .
+            It fetches real-time weather data using an external weather API.
+            
+        </p></p>
+          
+          <button class="github" style="font-size: medium;"><a href="https://github.com/kavinkumar202/project/tree/main/Weatherdemo">GitHub</a></button>
+        </div>
+    
+        <div class="card">
+          <div class="icon"></div>
+          <h3 style="font-size: medium;">Loan Application</h3>
+          <p style="font-size: medium;">Implement a Spring Boot application with RESTful APIs Ensure secure role-based access control and database interactions using JDBC.with htm,css and js</p>
+          
+          <button class="github" style="font-size: medium; "><a href="https://github.com/kavinkumar202/project/tree/main/mpocket">GitHub</a></button>
+        </div>
+    
+        <div class="card highlight">
+          <div class="icon"></div>
+          <h3 style="font-size: medium;">Tarvel your way</h3>
+          <p style="font-size: medium;">Develop a frontend and Html Structure and Content,css Styling and Design js Interactivity and Functionality</p>
+         
+          <button class="github" style="font-size: medium;"><a href="https://github.com/kavinkumar202/project/tree/main/tourism-website-main">GitHub</a></button>
+        </div>
+      </div>
+    
+    <section class="contact" id="contact">
+        <h2 class="title"><i class='bx bx-headphone'></i>CONTACT ME</h2>
+        <form action="#" id="">
+            <div class="input-box">
+                <input type="text" required placeholder="Full Name">
+                <input type="email" required placeholder="Email">
+            </div>
+            <div class="input-box">
+                <input type="tel" required placeholder="Mobile Number">
+                <input type="email" required placeholder="Subject For">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message" required></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+    <footer>
+        <div class="text">
+            <p>Copyright @ 2024 by Hash Techie</p>
+        </div>
+       <a href="#"> <i class='bx bx-up-arrow-alt'></i></a>
+    </footer>
+    <script>
+        const menubar = document.querySelector('#menu');
+const Navbar = document.querySelector('.navbar');
+menubar.onclick=()=>{
+    menubar.classList.toggle('bx-x');
+    Navbar.classList.toggle('active')
+}
+const section=document.querySelectorAll('section');
+const navlink = document.querySelectorAll('header nav a')
+window.onscroll = ()=>{
+    section.forEach(sec=>{
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id')
+        if(top>offset && top < offset + height){
+            sec.classList.add('start-animation');
+            navlink.forEach(links=>{
+                links.classList.remove('active')
+                document.querySelector('header nav a[href*='+id+']').classList.add('active')
+              
+            })
+        }
+    })
+    var header = document.querySelector('.header');
+    header.classList.toggle('sticky',window.scrollY>100)
+    menubar.classList.remove('bx-x');
+    Navbar.classList.remove('active')
+}
+
+    </script>
+</body>
+
+</html>
